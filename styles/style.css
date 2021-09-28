@@ -1,0 +1,163 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Roboto", sans-serif;
+}
+.loader {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background:rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    display: none;
+}
+
+.loader.show {
+    display: block;
+}
+
+.loader::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border-radius: 20px;
+    border: 5px solid #ff0000;
+    animation: loading 1000ms ease-in-out infinite;
+}
+@keyframes loading {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1) rotate(360deg);
+    }
+}
+
+#download-frame {
+    display: none;
+}
+
+.app {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        135deg
+        ,#051866,#021038 80%);
+    }
+.app .container {
+    text-align: center;
+    width: 95%;
+    max-width: 650px;
+}
+
+.app h1 {
+    color: #fff;
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.app p {
+    color: #eee;
+    font-size: 18px;
+}
+
+.app .form {
+    display: flex;
+    margin: 40px 0px 20px;
+}
+
+.app .form input {
+    padding: 15px;
+    font-size: 16px;
+    outline: none;
+    border: 2px solid #ff0000;
+    border-radius: 10px 0px 0px 10px;
+    flex: 1;
+
+}
+
+.app .form button {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: #ff0000;
+    color: #fff;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.notification {
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 0;
+    padding: 10px 20px;
+    background: #fff;
+    color:royalblue;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 5px 10px rgba(0,0,0,0.05);
+    transition: all 300ms ease-in-out;
+}
+
+.notification.show {
+    top: 50px;
+    opacity: 1;
+}
+
+/* Float four columns side by side */
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .card {
+    position: fixed;
+    color: rgba(224,232,255,.64);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5); /* this adds the "card" effect */
+    border-radius: 5px 5px 5px 5px;
+    padding: 12px 20px;
+    margin-right: 0px;
+    text-align: center;
+    background-color: rgba(5,108,234,.08);
+  }
+  .card a {
+      color:rgba(81, 61, 255, 0.5)
+  }
+  
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
